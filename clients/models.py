@@ -12,3 +12,12 @@ class Client(models.Model):
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name}"
 
+class Contact(models.Model):
+    subject=models.CharField(max_length=200)
+    message=models.TextField()
+
+    def __str__(self):
+        return self.subject
+class Deposit(models.Model):
+    amount=models.PositiveIntegerField()
+    

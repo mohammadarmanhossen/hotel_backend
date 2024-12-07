@@ -8,6 +8,15 @@ class ClientSerializer(serializers.ModelSerializer):
         model = models.Client
         fields = '__all__'
 
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Contact
+        fields = '__all__'
+
+class DepositSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Deposit
+        fields = '__all__'
 
 class RegistrationSerializer(serializers.ModelSerializer):
     confirm_password = serializers.CharField(required = True)

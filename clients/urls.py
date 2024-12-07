@@ -3,6 +3,8 @@ from django.urls import path,include
 from . import views
 router=DefaultRouter()
 router.register('list',views.ClientViewSet),
+router.register('contact',views.ContactViewSet),
+router.register('deposit',views.DepositViewSet),
 
 urlpatterns = [
     path('',include(router.urls)),

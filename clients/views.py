@@ -23,7 +23,13 @@ class ClientViewSet(viewsets.ModelViewSet):
     queryset=models.Client.objects.all()
     serializer_class=serializer.ClientSerializer
 
-
+class ContactViewSet(viewsets.ModelViewSet):
+    queryset=models.Contact.objects.all()
+    serializer_class=serializer.ContactSerializer
+    
+class DepositViewSet(viewsets.ModelViewSet):
+    queryset=models.Deposit.objects.all()
+    serializer_class=serializer.DepositSerializer
 
 
 class UserRegistrationApiView(APIView):

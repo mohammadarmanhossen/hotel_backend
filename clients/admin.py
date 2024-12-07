@@ -12,3 +12,5 @@ class ClientAdmin(admin.ModelAdmin):
         return obj.user.last_name
 
 admin.site.register(models.Client,ClientAdmin)
+
+admin.site.register(models.Contact)
