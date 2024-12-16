@@ -18,7 +18,13 @@ class District(models.Model):
 class Hotel(models.Model):
     hotel_name = models.CharField(max_length=255)
     address = models.TextField()
-    district_name= models.ForeignKey(District, on_delete=models.CASCADE, related_name="hotels")
+    district_names = models.ForeignKey(
+    'District',
+    on_delete=models.CASCADE,
+    related_name='hotels',
+    null=True,
+    blank=True
+    ) 
     image = models.ImageField(upload_to="hotels/images")
     description = models.TextField()
     price_per_night = models.DecimalField(max_digits=10, decimal_places=2)
