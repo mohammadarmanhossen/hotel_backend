@@ -92,7 +92,11 @@ WSGI_APPLICATION = 'Hotel_Booking.wsgi.application'
 CORS_ALLOW_ALL_ORIGINS = True
 
 
-CSRF_TRUSTED_ORIGINS = ["https://final-assingment.onrender.com"]
+# CSRF_TRUSTED_ORIGINS = ["https://final-assingment.onrender.com"]
+
+
+CSRF_TRUSTED_ORIGINS = ["https://hotel-backend-cmcn.onrender.com/"]
+
 
 
 
