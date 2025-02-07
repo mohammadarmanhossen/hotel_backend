@@ -22,10 +22,6 @@ from rest_framework.authtoken.models import Token
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework .decorators import api_view
-
-
-
-
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -94,7 +90,6 @@ def activate(request,uid64,token):
 
 class UserLoginApiView(APIView):
     def post(self, request):
-        # Rename the variable to avoid the naming conflict
         user_login_serializer = serializer.UserLoginSerializer(data=request.data)
         
         if user_login_serializer.is_valid():

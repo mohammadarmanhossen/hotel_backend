@@ -19,13 +19,7 @@ class District(models.Model):
 class Hotel(models.Model):
     hotel_name = models.CharField(max_length=255)
     address = models.TextField()
-    district_names = models.ForeignKey(
-        'District',
-        on_delete=models.CASCADE,
-        related_name='hotels',
-        null=True,
-        blank=True
-    )
+    district_names = models.ForeignKey('District',on_delete=models.CASCADE,related_name='hotels',null=True,blank=True)
     image = models.ImageField(upload_to="hotels/images")
     description = models.TextField()
     price_per_night = models.DecimalField(max_digits=10, decimal_places=2)
@@ -55,7 +49,7 @@ class Review(models.Model):
     rating = models.CharField(max_length=10, choices=RATING_CHOICES) 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     def __str__(self):
-        return f'Review by {self.user.username}'  # Use hotel_name here
+        return f'Review by {self.user.username}' 
 
 
 class Booked(models.Model):

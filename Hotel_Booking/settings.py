@@ -14,25 +14,20 @@ from pathlib import Path
 import environ
 env = environ.Env()
 environ.Env.read_env()
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-(+v@mr*xii#26ye=(c=2)a$&-xz)iwqme0*k9z^16$$54w!%f0'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
 
-# Application definition
 
 INSTALLED_APPS = [
+    "whitenoise.runserver_nostatic",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -88,12 +84,13 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Hotel_Booking.wsgi.application'
+WSGI_APPLICATION = 'Hotel_Booking.wsgi.app'
 CORS_ALLOW_ALL_ORIGINS = True
 
-
+ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app"]
 
 CSRF_TRUSTED_ORIGINS = ["https://hotel-backend-cmcn.onrender.com"]
+
 
 
 
@@ -102,12 +99,27 @@ CSRF_TRUSTED_ORIGINS = ["https://hotel-backend-cmcn.onrender.com"]
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres.pwvabihfrnrydrydyuoc',
+        'PASSWORD': 'Arman404@',
+        'HOST': 'aws-0-ap-southeast-1.pooler.supabase.com',
+        'PORT': '5432'
     }
 }
+
+
 
 REST_FRAMEWORK={
     'DEFAULT_FILTER_BACKENDS':['django_filters.rest_framework.DjangoFilterBackend'],
@@ -150,6 +162,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 import os
 

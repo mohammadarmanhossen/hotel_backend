@@ -17,13 +17,12 @@ class HotelSerializer(serializers.ModelSerializer):
             'id', 
             'hotel_name', 
             'address', 
-            'district_name',  # Fetches the name of the related district
+            'district_name',  
             'image', 
             'description', 
             'price_per_night', 
             'available_room'
         ]
-
 
 
 class ReviewSerializer(serializers.ModelSerializer):
