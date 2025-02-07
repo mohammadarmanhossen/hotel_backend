@@ -3,9 +3,9 @@ from django.contrib.auth.models import User
 from .import models
 
 class ClientSerializer(serializers.ModelSerializer):
-    username = serializers.ReadOnlyField(source='user.username')  # From User model
-    first_name = serializers.ReadOnlyField(source='user.first_name')  # From User model
-    last_name = serializers.ReadOnlyField(source='user.last_name')  # From User model
+    username = serializers.ReadOnlyField(source='user.username') 
+    first_name = serializers.ReadOnlyField(source='user.first_name')  
+    last_name = serializers.ReadOnlyField(source='user.last_name')
 
     class Meta:
         model = models.Client
