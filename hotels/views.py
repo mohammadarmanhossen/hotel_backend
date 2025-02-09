@@ -6,6 +6,12 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
 from .import serializer
 
+
+from rest_framework import viewsets, status
+from rest_framework.response import Response
+from .models import Booked, Hotel
+from .serializer import BookedSerializer
+
 class DistrictViewSet(viewsets.ModelViewSet):
     queryset=models.District.objects.all()
     serializer_class=serializer.DistrictSerializer
@@ -22,9 +28,15 @@ class ReviewViewSet(viewsets.ModelViewSet):
     queryset=models.Review.objects.all()
     serializer_class=serializer.ReviewSerializer
 
+# class BookedViewSet(viewsets.ModelViewSet):
+#     queryset=models.Booked.objects.all()
+#     serializer_class=serializer.BookedSerializer
+
+
+
 class BookedViewSet(viewsets.ModelViewSet):
-    queryset=models.Booked.objects.all()
-    serializer_class=serializer.BookedSerializer
+    queryset = Booked.objects.all()
+    serializer_class = BookedSerializer
 
 
 

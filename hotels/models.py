@@ -85,14 +85,37 @@ class Review(models.Model):
         return f'Review by {self.user.username}' 
 
 
+# class Booked(models.Model):
+#     hotel_name = models.ForeignKey(Hotel, on_delete=models.CASCADE)
+#     room=models.PositiveIntegerField()
+#     total_amount = models.PositiveIntegerField(null=True, blank=True)
+#     in_date=models.DateField()
+#     out_date=models.DateField()
+
+#     def save(self, *args, **kwargs):
+#         # Calculate total_amount before saving
+#         if self.hotel_name and self.room:
+#             self.total_amount = self.hotel_name.price_per_night * self.room
+#         super().save(*args, **kwargs)  # Call the real save() method
+
+#     def __str__(self):
+#         return f"{self.hotel_name}"
+
+
+
 class Booked(models.Model):
     hotel_name = models.ForeignKey(Hotel, on_delete=models.CASCADE)
-    room=models.PositiveIntegerField()
-    in_date=models.DateField()
-    out_date=models.DateField()
-    payment=models.CharField(max_length=10, choices=PAYMENT) 
+    room = models.PositiveIntegerField()
+    total_amount = models.PositiveIntegerField(null=True, blank=True)
+    in_date = models.DateField()
+    out_date = models.DateField()
 
-    
+    def save(self, *args, **kwargs):
+        # Recalculate total_amount before saving
+        if self.hotel_name and self.room:
+            self.total_amount = self.hotel_name.price_per_night * self.room
+        super().save(*args, **kwargs)  # Call the real save() method
+
     def __str__(self):
         return f"{self.hotel_name}"
 
