@@ -28,6 +28,9 @@ class Hotel(models.Model):
 
     def __str__(self):
         return self.hotel_name
+    
+    def district_name(self):
+        return self.district_names.district_name if self.district_names else None
 
     def upload_image_to_imagebb(self, image_file):
         api_key = '91eb0ab92307af61f7bffe3b9d728952'
@@ -95,3 +98,4 @@ class Booked(models.Model):
 
    
     
+
