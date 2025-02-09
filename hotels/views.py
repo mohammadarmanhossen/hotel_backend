@@ -28,11 +28,6 @@ class ReviewViewSet(viewsets.ModelViewSet):
     queryset=models.Review.objects.all()
     serializer_class=serializer.ReviewSerializer
 
-# class BookedViewSet(viewsets.ModelViewSet):
-#     queryset=models.Booked.objects.all()
-#     serializer_class=serializer.BookedSerializer
-
-
 
 class BookedViewSet(viewsets.ModelViewSet):
     queryset = Booked.objects.all()
