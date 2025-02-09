@@ -103,9 +103,11 @@ class Review(models.Model):
 
 
 
+
 class Booked(models.Model):
     hotel_name = models.ForeignKey(Hotel, on_delete=models.CASCADE)
     room = models.PositiveIntegerField()
+    price_per_night = models.PositiveIntegerField()
     total_amount = models.PositiveIntegerField(null=True, blank=True)
     in_date = models.DateField()
     out_date = models.DateField()
@@ -119,6 +121,6 @@ class Booked(models.Model):
     def __str__(self):
         return f"{self.hotel_name}"
 
-   
+    
     
 
