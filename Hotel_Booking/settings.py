@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'hotels',
     'clients',
+    'payment',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -87,7 +89,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Hotel_Booking.wsgi.app'
 CORS_ALLOW_ALL_ORIGINS = True
 
-ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app"]
+ALLOWED_HOSTS = ['127.0.0.1', ".vercel.app"]
 
 CSRF_TRUSTED_ORIGINS = ["https://hotel-backend-cmcn.onrender.com"]
 # DATABASES = {
