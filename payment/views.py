@@ -59,7 +59,7 @@ class PaymentViewSet(viewsets.ViewSet):
             'emi_option': 0,
             'cus_name': name,
             'cus_email': email,
-            'cus_phone':17650341906,
+            'cus_phone':"017934875",
             'cus_add1':"Mirpur,Dhaka",
             'cus_city': "Dhaka",
             'cus_country': "Bangladesh",
