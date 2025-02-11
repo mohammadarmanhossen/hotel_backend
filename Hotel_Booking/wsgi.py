@@ -16,3 +16,5 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Hotel_Booking.settings')
 app= get_wsgi_application()
 
 
+
+
