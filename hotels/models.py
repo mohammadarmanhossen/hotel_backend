@@ -70,8 +70,6 @@ class Booked(models.Model):
 
 
 
-
-
 RATING_CHOICES = [
         ('⭐', '⭐'),
         ('⭐⭐', '⭐⭐'),

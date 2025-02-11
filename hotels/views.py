@@ -7,9 +7,8 @@ from rest_framework.filters import SearchFilter
 from .import serializer
 
 
-from rest_framework import viewsets, status
-from rest_framework.response import Response
-from .models import Booked, Hotel
+from rest_framework import viewsets
+from .models import Booked
 from .serializer import BookedSerializer
 
 class DistrictViewSet(viewsets.ModelViewSet):

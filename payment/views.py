@@ -2,7 +2,6 @@
 from rest_framework import viewsets
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import AllowAny
 from rest_framework.decorators import action
 from django.contrib.auth.models import User
 import uuid
@@ -10,6 +9,7 @@ from sslcommerz_lib import SSLCOMMERZ
 from .serializer import CheckoutSerializers
 from .models import Checkout
 from django.shortcuts import redirect
+
 
 
 class CheckoutViewSet(viewsets.ModelViewSet):
