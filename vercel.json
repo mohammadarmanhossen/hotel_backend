@@ -1,13 +1,29 @@
+// {
+//     "builds": [{
+//       "src": "Hotel_Booking/wsgi.py",
+//       "use": "@vercel/python",
+//       "config": { "maxLambdaSize": "15mb", "runtime": "python3.11.3" }
+//     }],
+//     "routes": [
+//       {
+//         "src": "/(.*)",
+//         "dest": "Hotel_Booking/wsgi.py"
+//       }
+//     ]
+// }
+
 {
-    "builds": [{
+  "version": 2,
+  "builds": [
+    {
       "src": "Hotel_Booking/wsgi.py",
-      "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.11.3" }
-    }],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "Hotel_Booking/wsgi.py"
-      }
-    ]
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "Hotel_Booking/wsgi.py"
+    }
+  ]
 }

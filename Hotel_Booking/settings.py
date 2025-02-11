@@ -88,7 +88,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Hotel_Booking.wsgi.application'
+WSGI_APPLICATION = 'Hotel_Booking.wsgi.app'
 CORS_ALLOW_ALL_ORIGINS = True
 
 ALLOWED_HOSTS = ['127.0.0.1', ".vercel.app"]
