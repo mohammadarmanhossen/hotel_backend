@@ -89,11 +89,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Hotel_Booking.wsgi.app'
+
 CORS_ALLOW_ALL_ORIGINS = True
 
 ALLOWED_HOSTS = ['127.0.0.1', ".vercel.app"]
 
 CSRF_TRUSTED_ORIGINS = ["https://hotel-backend-cmcn.onrender.com"]
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
