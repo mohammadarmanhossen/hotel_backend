@@ -82,6 +82,7 @@ class PaymentViewSet(viewsets.ViewSet):
 
 class PaymentSuccessAPI(APIView):
     def post(self, request):
+        print("hello")
          return redirect("http://127.0.0.1:5502/user_dashboard.html")
 
 
