@@ -9,8 +9,7 @@ from sslcommerz_lib import SSLCOMMERZ
 from .serializer import CheckoutSerializers
 from .models import Checkout
 from django.shortcuts import redirect
-
-
+from .import views
 
 class CheckoutViewSet(viewsets.ModelViewSet):
     queryset = Checkout.objects.all()
@@ -82,7 +81,6 @@ class PaymentViewSet(viewsets.ViewSet):
 
 class PaymentSuccessAPI(APIView):
     def post(self, request):
-        print("hello")
          return redirect("http://127.0.0.1:5502/user_dashboard.html")
 
 
@@ -94,3 +92,5 @@ class PaymentFailedAPI(APIView):
 class PaymentCancelAPI(APIView):
     def post(self, request):
          return redirect("http://127.0.0.1:5502/user_dashboard.html")
+
+
