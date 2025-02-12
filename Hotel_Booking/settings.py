@@ -94,7 +94,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 ALLOWED_HOSTS = ['127.0.0.1', ".vercel.app"]
 
-CSRF_TRUSTED_ORIGINS = ["https://hotel-backend-cmcn.onrender.com"]
+CSRF_TRUSTED_ORIGINS = ["https://hotel-backend-3ybx.vercel.app/"]
 
 # DATABASES = {
 #     'default': {
@@ -112,7 +112,7 @@ DATABASES = {
         'HOST': 'aws-0-ap-southeast-1.pooler.supabase.com',
         'PORT': '5432',
         'OPTIONS': {
-            'connect_timeout': 10,
+            'connect_timeout': 15,
         },
     }
 }
