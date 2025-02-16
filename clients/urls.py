@@ -2,6 +2,9 @@ from rest_framework.routers import DefaultRouter
 from django.urls import path,include
 from .import views
 from .views import UserListView
+from .views import AdminLoginView, AdminLogoutView
+
+
 router=DefaultRouter()
 router.register('list',views.ClientViewSet),
 router.register('contact',views.ContactViewSet),
@@ -14,6 +17,8 @@ urlpatterns = [
     path('logout/',views.UserLogoutApiView.as_view(),name='logout'),
     path('active/<uid64>/<token>',views.activate,name='activate'),
     path('users/', UserListView.as_view(), name='user-list'),
+    path('admin/login/', AdminLoginView.as_view(), name='admin_login'),
+    path('admin/logout/', AdminLogoutView.as_view(), name='admin_logout'),
 ]
 
 

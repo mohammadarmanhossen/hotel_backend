@@ -17,6 +17,7 @@ class District(models.Model):
         return self.district_name
 
 
+        
 class Hotel(models.Model):
     hotel_name = models.CharField(max_length=255)
     address = models.TextField()
@@ -51,47 +52,39 @@ class Hotel(models.Model):
 
 
 
-
-
 class Booked(models.Model):
     hotel_name = models.ForeignKey(Hotel, on_delete=models.CASCADE)
     room = models.PositiveIntegerField()
     in_date = models.DateField()
     out_date = models.DateField()
     total_amount = models.PositiveIntegerField(null=True, blank=True)
+    is_paid = models.BooleanField(default=False)
+
+
 
     def save(self, *args, **kwargs):
         if self.hotel_name and self.room:
-            self.total_amount = self.hotel_name.price_per_night * self.room
-        super().save(*args, **kwargs) 
+            self.total_amount = self.hotel_name.price_per_night * self.room  
+        super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"{self.hotel_name}"
+        return f"{self.hotel_name} - {self.room} Rooms"
+
+
 
 
 
 RATING_CHOICES = [
-        ('⭐', '⭐'),
-        ('⭐⭐', '⭐⭐'),
-        ('⭐⭐⭐', '⭐⭐⭐'),
-        ('⭐⭐⭐⭐', '⭐⭐⭐⭐'),
-        ('⭐⭐⭐⭐⭐', '⭐⭐⭐⭐⭐'),
-    ]
-PAYMENT=[
-    ('ssl','ssl'),
-    ('Account','Account'),
+    ('1', '⭐'),
+    ('2', '⭐⭐'),
+    ('3', '⭐⭐⭐'),
+    ('4', '⭐⭐⭐⭐'),
+    ('5', '⭐⭐⭐⭐⭐'),
 ]
-class Review(models.Model):
+class Review(models.Model): 
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
-    rating = models.CharField(max_length=10, choices=RATING_CHOICES) 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    def __str__(self):
-        return f'Review by {self.user.username}' 
-    
-
-
-
+    rating = models.CharField(max_length=5, choices=RATING_CHOICES) 
 
 
 

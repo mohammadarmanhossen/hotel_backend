@@ -24,14 +24,16 @@ class HotelSerializer(serializers.ModelSerializer):
             'available_room'
         ]
 
-
-class ReviewSerializer(serializers.ModelSerializer):
-    user = serializers.StringRelatedField(many=False)
-    class Meta:
-        model = models.Review
-        fields = ['id', 'rating', 'user', 'created', 'body']
-
 class BookedSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Booked
         fields = '__all__' 
+
+
+class ReviewSerializer(serializers.ModelSerializer): 
+
+    class Meta:
+        model = models.Review
+        fields = ['id', 'rating','created', 'body']
+
+        

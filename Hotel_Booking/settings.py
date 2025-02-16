@@ -59,6 +59,7 @@ MIDDLEWARE = [
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_METHODS = [
@@ -96,6 +97,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Hotel_Booking.wsgi.app'
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    'http://127.0.0.1:8000',  
+]
 
 ALLOWED_HOSTS = ['127.0.0.1', ".vercel.app"]
 

@@ -23,15 +23,14 @@ class HotelViewSet(viewsets.ModelViewSet):
     search_fields = ['district_names'] 
     search_fields = ['hotel_name']  
 
-class ReviewViewSet(viewsets.ModelViewSet):
-    queryset=models.Review.objects.all()
-    serializer_class=serializer.ReviewSerializer
-
 
 class BookedViewSet(viewsets.ModelViewSet):
     queryset = Booked.objects.all()
     serializer_class = BookedSerializer
 
 
+class ReviewViewSet(viewsets.ModelViewSet):
+    queryset=models.Review.objects.all()
+    serializer_class=serializer.ReviewSerializer
 
     

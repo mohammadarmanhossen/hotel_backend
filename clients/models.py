@@ -21,3 +21,4 @@ class Contact(models.Model):
 class Deposit(models.Model):
     amount=models.PositiveIntegerField()
     
+
