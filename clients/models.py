@@ -13,6 +13,8 @@ class Client(models.Model):
         return f"{self.user.first_name} {self.user.last_name}"
 
 class Contact(models.Model):
+    
+    
     subject=models.CharField(max_length=200)
     message=models.TextField()
 

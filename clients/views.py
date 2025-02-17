@@ -33,6 +33,18 @@ from rest_framework.permissions import IsAuthenticated
 
 
 
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authtoken.models import Token
+from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
+from rest_framework import status
+
+
+
+
+
 class ClientViewSet(viewsets.ModelViewSet):
     queryset=models.Client.objects.all()
     serializer_class=serializer.ClientSerializer
@@ -121,15 +133,8 @@ class UserLogoutApiView(APIView):
 
 
 
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.authtoken.models import Token
-from django.contrib.auth import authenticate
-from django.contrib.auth.models import User
-from rest_framework import status
 
-# Admin Login View
+
 class AdminLoginView(APIView):
     def post(self, request):
         username = request.data.get('username')
@@ -144,12 +149,10 @@ class AdminLoginView(APIView):
         return Response({'error': 'Invalid credentials or not an admin.'}, status=status.HTTP_400_BAD_REQUEST)
 
 
-# Admin Logout View
-class AdminLogoutView(APIView):
-    
 
+class AdminLogoutView(APIView):
     def post(self, request):
-        token = request.headers.get('Authorization').split()[1]  # Get token from header
+        token = request.headers.get('Authorization').split()[1]  
         
         try:
             Token.objects.get(key=token).delete()
