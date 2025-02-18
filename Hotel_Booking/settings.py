@@ -120,10 +120,8 @@ DATABASES = {
         'USER': 'postgres.pwvabihfrnrydrydyuoc',
         'PASSWORD': 'Arman404@',
         'HOST': 'aws-0-ap-southeast-1.pooler.supabase.com',
-        'PORT': '5432',
-        'OPTIONS': {
-            'connect_timeout': 15,
-        },
+        'PORT': '6543',
+       
     }
 }
 
