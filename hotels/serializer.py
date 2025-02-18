@@ -36,4 +36,4 @@ class ReviewSerializer(serializers.ModelSerializer):
         model = models.Review
         fields = ['id', 'rating','created', 'body']
 
-        
+
