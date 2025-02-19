@@ -21,7 +21,7 @@ class District(models.Model):
 class Hotel(models.Model):
     hotel_name = models.CharField(max_length=255)
     address = models.TextField()
-    district_names = models.ForeignKey('District', on_delete=models.CASCADE, related_name='hotels', null=True, blank=True)
+    district_names = models.ForeignKey(District, on_delete=models.CASCADE, related_name='hotels', null=True, blank=True)
     image_url = models.CharField(max_length=1024, blank=True)  
     description = models.TextField()
     price_per_night = models.DecimalField(max_digits=10, decimal_places=2)
@@ -84,7 +84,7 @@ RATING_CHOICES = [
 class Review(models.Model): 
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
-    rating = models.CharField(max_length=5, choices=RATING_CHOICES) 
+    rating = models.CharField(max_length=5, choices=RATING_CHOICES)
 
 
 

@@ -23,6 +23,8 @@ class HotelViewSet(viewsets.ModelViewSet):
     search_fields = ['district_names'] 
     search_fields = ['hotel_name']  
 
+    
+
     def destroy(self, request, *args, **kwargs):
         hotel = self.get_object()
         hotel.delete()
