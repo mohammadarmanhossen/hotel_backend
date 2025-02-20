@@ -133,8 +133,6 @@ class UserLogoutApiView(APIView):
 
 
 
-
-
 class AdminLoginView(APIView):
     def post(self, request):
         username = request.data.get('username')
