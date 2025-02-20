@@ -22,7 +22,7 @@ class Hotel(models.Model):
     hotel_name = models.CharField(max_length=255)
     address = models.TextField()
     district_names = models.ForeignKey(District, on_delete=models.CASCADE, related_name='hotels', null=True, blank=True)
-    image_url = models.CharField(max_length=1024, blank=True)  
+    image_url = models.URLField(max_length=255, blank=True, null=True)  
     description = models.TextField()
     price_per_night = models.DecimalField(max_digits=10, decimal_places=2)
     available_room = models.PositiveIntegerField()
@@ -33,22 +33,6 @@ class Hotel(models.Model):
     def district_name(self):
         return self.district_names.district_name if self.district_names else None
 
-    def upload_image_to_imagebb(self, image_file):
-        api_key = '91eb0ab92307af61f7bffe3b9d728952'
-        url = 'https://api.imgbb.com/1/upload'
-        payload = {
-            'key': api_key,
-            'image': image_file,
-        }
-        response = requests.post(url, data=payload)
-        if response.status_code == 200:
-            return response.json()['data']['url']
-        return None
-
-    def save(self, *args, **kwargs):
-        if self.image_url:  
-            self.image_url = self.upload_image_to_imagebb(self.image_url) 
-        super().save(*args, **kwargs)
 
 
 
