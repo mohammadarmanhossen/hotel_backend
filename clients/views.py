@@ -126,7 +126,7 @@ class UserLoginApiView(APIView):
 class UserLogoutApiView(APIView):
     def get(self, request):
         logout(request)
-        return redirect('https://aesthetic-licorice-2c7482.netlify.app/login')
+        return redirect('login')
 
 
 

@@ -11,9 +11,6 @@ class DistrictSerializer(serializers.ModelSerializer):
         fields = ['id', 'district_name', 'slug']
 
 
-
-
-
 class HotelSerializer(serializers.ModelSerializer):
     district_name = serializers.CharField(source='district_names.district_name', read_only=True)
     district_names = serializers.PrimaryKeyRelatedField(queryset=District.objects.all(),write_only=True)
