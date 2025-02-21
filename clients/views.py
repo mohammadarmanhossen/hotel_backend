@@ -75,7 +75,7 @@ class UserRegistrationApiView(APIView):
             print("token ", token)
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             print("uid ", uid)
-            confirm_link = f"https://hotel-backend-3ybx.vercel.app/client/active/{uid}/{token}"
+            confirm_link = f"https://hotel-backend-arcx.onrender.com/client/active/{uid}/{token}"
             email_subject = "Confirm Your Email"
             email_body = render_to_string('confirm_email.html', {'confirm_link' : confirm_link})
             
