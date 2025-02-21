@@ -102,47 +102,26 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',  
 ]
 
-ALLOWED_HOSTS = ['127.0.0.1', ".vercel.app"]
+ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = ["https://hotel-backend-3ybx.vercel.app/"]
-
-<<<<<<< HEAD
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-=======
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres.pwvabihfrnrydrydyuoc',
-        'PASSWORD': 'Arman404@',
-        'HOST': 'aws-0-ap-southeast-1.pooler.supabase.com',
-        'PORT': '6543',
-       
->>>>>>> 0916d3e4ae06a86018d274415ce66a2381654c24
     }
 }
 
 
 
-<<<<<<< HEAD
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'postgres',
-#         'USER': 'postgres.agnyvoxnvzcktytwujxo',
-#         'PASSWORD':'m3sj6SB1A7C9eCUw',
+#         'USER': 'postgres.pwvabihfrnrydrydyuoc',
+#         'PASSWORD': 'Arman404@',
 #         'HOST': 'aws-0-ap-southeast-1.pooler.supabase.com',
 #         'PORT': '6543',
        
@@ -150,8 +129,7 @@ DATABASES = {
 # }
 
 
-=======
->>>>>>> 0916d3e4ae06a86018d274415ce66a2381654c24
+
 REST_FRAMEWORK={
     'DEFAULT_FILTER_BACKENDS':['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication',],
@@ -195,10 +173,3 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = env("EMAIL")
 EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> 0916d3e4ae06a86018d274415ce66a2381654c24

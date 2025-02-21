@@ -160,8 +160,3 @@ class AdminLogoutView(APIView):
 
 
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 0916d3e4ae06a86018d274415ce66a2381654c24
