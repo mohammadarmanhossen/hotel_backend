@@ -82,7 +82,7 @@ class PaymentSuccessAPI(APIView):
         if booked:
             booked.is_paid = True
             booked.save()
-            return redirect("https://aesthetic-licorice-2c7482.netlify.app/user_dashboard.html")
+            return redirect("https://hotel-front-website.netlify.app/user_dashboard.html")
 
         return Response({"error": "Booking not found"}, status=404)
 
@@ -90,13 +90,13 @@ class PaymentFailedAPI(APIView):
 
 
     def post(self, request):
-        return redirect("https://aesthetic-licorice-2c7482.netlify.app/user_dashboard.html")
+        return redirect("https://hotel-front-website.netlify.app/user_dashboard.html")
 
 
 class PaymentCancelAPI(APIView):
  
     def post(self, request):
-        return redirect("https://aesthetic-licorice-2c7482.netlify.app/user_dashboard.htmll")
+        return redirect("https://hotel-front-website.netlify.app/user_dashboard.htmll")
 
 
 
