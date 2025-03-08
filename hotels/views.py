@@ -31,13 +31,10 @@ class HotelViewSet(viewsets.ModelViewSet):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-# class BookedViewSet(viewsets.ModelViewSet):
-#     queryset = Booked.objects.all()
-#     serializer_class = BookedSerializer
-
 class BookedViewSet(viewsets.ModelViewSet):
-    queryset = Booked.objects.all().order_by('-id') 
+    queryset = Booked.objects.all()
     serializer_class = BookedSerializer
+
 
 
 
